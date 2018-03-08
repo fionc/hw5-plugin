@@ -27,9 +27,10 @@ function getCurrentTabUrl(callback) {
  * @param {string} color The new background color.
  */
 function changeBackgroundColor(color) {
-  var script = 'document.body.style.backgroundColor="' + color + '";';
+  var bkgColor = 'document.body.style.backgroundColor="' + color + '";';
+
   chrome.tabs.executeScript({
-    code: script
+    code: bkgColor
   });
 }
 
@@ -63,9 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
     var dropdown = document.getElementById('dropdown');
 
     getSavedBackgroundColor(url, (savedColor) => {
+      console.log(savedColor);
       if (savedColor) {
         changeBackgroundColor(savedColor);
         dropdown.value = savedColor;
+      } else {
+        changeBackgroundColor('black');
+        dropdown.value = 'black';
       }
     });
 
