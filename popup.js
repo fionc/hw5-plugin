@@ -31,6 +31,10 @@ function changeBackgroundColor(color) {
 
   chrome.tabs.executeScript({
     code: bkgColor
+  }, function() {
+    chrome.tabs.executeScript({
+      file: 'textcolor.js'
+    })
   });
 }
 
