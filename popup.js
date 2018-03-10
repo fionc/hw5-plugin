@@ -95,6 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
           dropdownBackgroundElements[i].style.display = 'block';
         }
       }
+      
+      if (dropdown.value === 'all') {
+        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #all");
+        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
+          dropdownBackgroundElements[i].style.display = 'block';
+        }
+      }
     });
   });
 });
