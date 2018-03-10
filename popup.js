@@ -1,11 +1,6 @@
-// Starter Code
+// Adapted from: https://developer.chrome.com/extensions/getstarted
 
-/**
- * Get the current URL.
- *
- * @param {function(string)} callback called when the URL of the current tab
- *   is found.
- */
+// Gets current url with given callback
 function getCurrentTabUrl(callback) {
   var queryInfo = {
     active: true,
@@ -21,11 +16,7 @@ function getCurrentTabUrl(callback) {
   });
 }
 
-/**
- * Change the background color of the current page.
- *
- * @param {string} color The new background color.
- */
+// Changes background page color given the background color
 function changeBackgroundColor(color) {
   var bkgColor = 'document.body.style.backgroundColor="' + color + '";';
 
@@ -38,25 +29,14 @@ function changeBackgroundColor(color) {
   });
 }
 
-/**
- * Gets the saved background color for url.
- *
- * @param {string} url URL whose background color is to be retrieved.
- * @param {function(string)} callback called with the saved background color for
- *     the given url on success, or a falsy value if no color is retrieved.
- */
+// Gets saved backgound color from given url and callback
 function getSavedBackgroundColor(url, callback) {
   chrome.storage.sync.get(url, (items) => {
     callback(chrome.runtime.lastError ? null : items[url]);
   });
 }
 
-/**
- * Sets the given background color for url.
- *
- * @param {string} url URL for which background color is to be saved.
- * @param {string} color The background color to be saved.
- */
+// Saves to the given url and sets the given background color
 function saveBackgroundColor(url, color) {
   var items = {};
   items[url] = color;

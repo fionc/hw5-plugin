@@ -9,6 +9,10 @@ if (bckColor === 'white') {
     textColor = 'purple';
 } else if (bckColor === 'yellow') { // Refer to pictures of colors in source 2; purple and yellow are easily differentiated in 3 types of color blindness
     textColor = 'purple';
+} else if (bckColor === 'blue') {
+    textColor = 'yellow';  // Refer to the pictures in source 2 for PROTANOPIA
+
+    // not sure if we should do inverse combinations? like a purple background and green text, etc.???
 }
 for (let i = 0; i < textElements.length; i++) {
     textElements[i].style.color = textColor;
