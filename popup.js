@@ -66,43 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
       saveBackgroundColor(url, dropdownBackground.value);
     });
 
-    // Listen on dropdown to see what color the user can't see
-    // When selected, then show the dropdown with background colors to choose from for that specific color
+    // Listens for change in first dropdown and reacts to it
     dropdown.addEventListener('change', () => {
-      // Hard coding the value to be nothing, since user hasn't selected anything yet
+      // Prevents background color dropdown from showing first option in field
       dropdownBackground.value = '';
+
       let allBackgroundColors = dropdownBackground.children;
       for (let i = 0; i < allBackgroundColors.length; i++) {
         allBackgroundColors[i].style.display = 'none';
       }
+
       backgroundPrompt.style.display = 'block';
       dropdownBackground.style.display = 'block';
-      if (dropdown.value === 'red') {
-        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #red");
-        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
-          dropdownBackgroundElements[i].style.display = 'block';
-        }
-      }
 
-      if (dropdown.value === 'blue') {
-        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #blue");
-        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
-          dropdownBackgroundElements[i].style.display = 'block';
-        }
-      }
-      
-      if (dropdown.value === 'green') {
-        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #green");
-        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
-          dropdownBackgroundElements[i].style.display = 'block';
-        }
-      }
-      
-      if (dropdown.value === 'all') {
-        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #all");
-        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
-          dropdownBackgroundElements[i].style.display = 'block';
-        }
+      // Show each background color for selected colorblindness
+      let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #" + dropdown.value);
+      for (let i = 0; i < dropdownBackgroundElements.length; i++) {
+        dropdownBackgroundElements[i].style.display = 'block';
       }
     });
   });
