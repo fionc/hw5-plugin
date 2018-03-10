@@ -1,8 +1,6 @@
 var textElements = document.querySelectorAll("p, a");
-var divElements = document.querySelectorAll("div.container")
 var textColor = 'white';
 var bckColor = document.body.style.backgroundColor;
-var missingColorDropdown = document.querySelector("#dropdown-background");
 
 if (bckColor === 'white') {
     textColor = 'black';
@@ -18,6 +16,7 @@ if (bckColor === 'white') {
     textColor = 'gray';  
 }
 
+// Changes font color of each p and a tag
 for (let i = 0; i < textElements.length; i++) {
     textElements[i].style.color = textColor;
 }

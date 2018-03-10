@@ -44,11 +44,14 @@ function saveBackgroundColor(url, color) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  getCurrentTabUrl((url) => {
-    var colorblindDropdown = document.getElementById('colorblind-dropdown');
-    var colorDropdown = document.getElementById('color-dropdown');
-    var colorPrompt = document.getElementById('color-prompt');
+  var colorblindDropdown = document.getElementById('colorblind-dropdown');
+  var colorDropdown = document.getElementById('color-dropdown');
+  var colorPrompt = document.getElementById('color-prompt');
 
+  // Prevents colorblind dropdown from showing first option as if it's selected
+  colorblindDropdown.value = '';
+  
+  getCurrentTabUrl((url) => {
     getSavedBackgroundColor(url, (savedColor) => {
       if (savedColor) {
         changeBackgroundColor(savedColor);
@@ -66,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Listens for change in first dropdown and reacts to it
     colorblindDropdown.addEventListener('change', () => {
-      // Prevents background color dropdown from showing first option in field
+      // Prevents background color dropdown from showing first option as if it's selected
       colorDropdown.value = '';
 
       let allBackgroundColors = colorDropdown.children;
