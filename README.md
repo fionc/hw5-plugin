@@ -1,4 +1,5 @@
 # Hwk 5: Architected Plugin
+By: Fion Chan and Kari Nasu
 
 ## VisionAware
 Our plugin, VisionAware lets users to change the background color of a webpage and is designed to make it easier for visually impaired users to view a webpage. Since color vision impairment (color blindness) affects people in different ways, Vision in aims provide better legibility by changing the color of a webpage and its font color. 
