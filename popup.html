@@ -28,15 +28,20 @@
     <div id="container">
       <span>Select a background color: </span>
       <select id="dropdown">
-        <option selected disabled hidden value=''></option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+        <!-- <option selected disabled hidden value=''></option>
         <option value="white">White</option>
         <option value="black">Black</option>
         <option value="green">Green</option>
         <option value="yellow">Yellow</option>
-        <option value="red">RED</option>
-        <option value="blue">Blue</option>
+        <option value="blue">Blue</option> -->
       </select>
-      <select id="dropdown-background" style="visibility: hidden">
+      <select id="dropdown-background" style="display: none">
+          <option id="red" value="yellow" style="display: none">Yellow</option>
+          <option id="red" value="green" style="display: none">Green</option>
+          <option id="blue" value="purple" style="display: none">Purple</option>
+          <option id="blue" value="white" style="display: none">White</option>
       </select>
     </div>
   </body>

@@ -46,6 +46,7 @@ function saveBackgroundColor(url, color) {
 document.addEventListener('DOMContentLoaded', () => {
   getCurrentTabUrl((url) => {
     var dropdown = document.getElementById('dropdown');
+    var dropdownBackground = document.getElementById('dropdown-background');
 
     getSavedBackgroundColor(url, (savedColor) => {
       console.log(savedColor);
@@ -58,9 +59,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    dropdownBackground.addEventListener('change', () => {
+      console.log("User selected background as: " + dropdownBackground);
+      changeBackgroundColor(dropdownBackground.value);
+      saveBackgroundColor(url, dropdownBackground.value);
+    });
+
+    // Listen on dropdown to see what color the user can't see
+    // When selected, then show the dropdown with background colors to choose from for that specific color
     dropdown.addEventListener('change', () => {
-      changeBackgroundColor(dropdown.value);
-      saveBackgroundColor(url, dropdown.value);
+      // Hard coding the value to be nothing, since user hasn't selected anything yet
+      dropdownBackground.value = '';
+      let allBackgroundColors = dropdownBackground.children;
+      for (let i = 0; i < allBackgroundColors.length; i++) {
+        allBackgroundColors[i].style.display = 'none';
+      }
+      dropdownBackground.style.display = 'block';
+      if (dropdown.value === 'red') {
+        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #red");
+        // Unhide elements that have red as ID
+        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
+          dropdownBackgroundElements[i].style.display = 'block';
+        }
+      }
+
+      if (dropdown.value === 'blue') {
+        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #blue");
+        // Unhide elements that have red as ID
+        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
+          dropdownBackgroundElements[i].style.display = 'block';
+        }
+      }
     });
   });
 });

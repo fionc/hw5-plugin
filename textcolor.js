@@ -2,6 +2,7 @@ var textElements = document.querySelectorAll("p, a");
 var divElements = document.querySelectorAll("div.container")
 var textColor = 'white';
 var bckColor = document.body.style.backgroundColor;
+var missingColorDropdown = document.querySelector("#dropdown-background");
 
 if (bckColor === 'white') {
     textColor = 'black';
@@ -18,6 +19,7 @@ for (let i = 0; i < textElements.length; i++) {
     textElements[i].style.color = textColor;
 }
 
+// Attempt to change container background color
 // for (let i = 0; i < divElements.length; i++) {
 //     divElements[i].style.color = bckColor;
 // }
