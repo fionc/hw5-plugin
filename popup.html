@@ -21,28 +21,33 @@
     </style>
 
     <script src="popup.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous"> -->
   </head>
 
   <body>
     <h1>Welcome to VisionAware</h1>
     <div id="container">
-      <span>Select a type of color blindness </span>
-      <select id="dropdown">
-          <option value="red">Protanomaly (reduced sensitivity to red)</option>
-          <option value="green">Deuteranomaly (reduced sensitivity to green)</option>
-          <option value="blue">Tritanomaly (reduced sensitivity to blue)</option>
-          <option value="all">Monochromacy (reduced sensitivity to all colors)</option>
-      </select>
-      <select id="dropdown-background" style="display: none"> 
-          <option id="red" value="yellow" style="display: none">Yellow</option>
-          <option id="red" value="green" style="display: none">Green</option>
-          <option id="blue" value="turquoise " style="display: none">Turquoise</option>
-          <option id="blue" value="pink" style="display: none">Pink</option>
-          <option id="green" value="blue" style="display: none">Blue</option>
-          <option id="green" value="yellow" style="display: none">Yellow</option>
-          <option id="all" value="white" style="display: none">White</option>
-          <option id="all" value="black" style="display: none">Black</option>
-      </select>
+      <span class="row">
+          <p>Select a type of color blindness</p>
+          <select id="dropdown">
+              <option value="red">Protanomaly (reduced sensitivity to red)</option>
+              <option value="green">Deuteranomaly (reduced sensitivity to green)</option>
+              <option value="blue">Tritanomaly (reduced sensitivity to blue)</option>
+              <option value="all">Monochromacy (reduced sensitivity to all colors)</option>
+          </select>
+          <p id="select-color-prompt" style="display: none">Select a type of color blindness</p>
+          <select id="dropdown-background" style="display: none" class="col-lg-6"> 
+              <option id="red" value="yellow" style="display: none">Yellow</option>
+              <option id="red" value="green" style="display: none">Green</option>
+              <option id="blue" value="turquoise " style="display: none">Turquoise</option>
+              <option id="blue" value="pink" style="display: none">Pink</option>
+              <option id="green" value="blue" style="display: none">Blue</option>
+              <option id="green" value="yellow" style="display: none">Yellow</option>
+              <option id="all" value="white" style="display: none">White</option>
+              <option id="all" value="black" style="display: none">Black</option>
+          </select>
+      </span>
     </div>
   </body>
 </html>

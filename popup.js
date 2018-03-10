@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   getCurrentTabUrl((url) => {
     var dropdown = document.getElementById('dropdown');
     var dropdownBackground = document.getElementById('dropdown-background');
+    var backgroundPrompt = document.getElementById('select-color-prompt');
 
     getSavedBackgroundColor(url, (savedColor) => {
       console.log(savedColor);
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 0; i < allBackgroundColors.length; i++) {
         allBackgroundColors[i].style.display = 'none';
       }
+      backgroundPrompt.style.display = 'block';
       dropdownBackground.style.display = 'block';
       if (dropdown.value === 'red') {
         let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #red");
