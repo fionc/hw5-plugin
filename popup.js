@@ -85,7 +85,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (dropdown.value === 'blue') {
         let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #blue");
-        // Unhide elements that have red as ID
+        // Unhide elements that have blue as ID
+        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
+          dropdownBackgroundElements[i].style.display = 'block';
+        }
+      }
+      
+      if (dropdown.value === 'green') {
+        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #green");
+        // Unhide elements that have green as ID
+        for (let i = 0; i < dropdownBackgroundElements.length; i++) {
+          dropdownBackgroundElements[i].style.display = 'block';
+        }
+      }
+
+      if (dropdown.value === 'all') {
+        let dropdownBackgroundElements = document.querySelectorAll("#dropdown-background #all");
+        // Unhide elements that have all as ID
         for (let i = 0; i < dropdownBackgroundElements.length; i++) {
           dropdownBackgroundElements[i].style.display = 'block';
         }

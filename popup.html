@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>VisionAware Popup</title>
     <style type="text/css">
       body {
         margin: 10px;
@@ -26,22 +26,22 @@
   <body>
     <h1>Welcome to VisionAware</h1>
     <div id="container">
-      <span>Select a background color: </span>
+      <span>Select a type of color blindness </span>
       <select id="dropdown">
-          <option value="red">Red</option>
-          <option value="blue">Blue</option>
-        <!-- <option selected disabled hidden value=''></option>
-        <option value="white">White</option>
-        <option value="black">Black</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-        <option value="blue">Blue</option> -->
+          <option value="red">Protanomaly (reduced sensitivity to red)</option>
+          <option value="green">Deuteranomaly (reduced sensitivity to green)</option>
+          <option value="blue">Tritanomaly (reduced sensitivity to blue)</option>
+          <option value="all">Monochromacy (reduced sensitivity to all colors)</option>
       </select>
       <select id="dropdown-background" style="display: none">
           <option id="red" value="yellow" style="display: none">Yellow</option>
           <option id="red" value="green" style="display: none">Green</option>
-          <option id="blue" value="purple" style="display: none">Purple</option>
-          <option id="blue" value="white" style="display: none">White</option>
+          <option id="blue" value="turquoise " style="display: none">Turquoise</option>
+          <option id="blue" value="pink" style="display: none">Pink</option>
+          <option id="green" value="blue" style="display: none">Blue</option>
+          <option id="green" value="yellow" style="display: none">Yellow</option>
+          <option id="all" value="white" style="display: none">White</option>
+          <option id="all" value="black" style="display: none">Black</option>
       </select>
     </div>
   </body>
