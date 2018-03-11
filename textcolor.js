@@ -1,6 +1,6 @@
-let textElements = document.querySelectorAll("p, a");
-let textColor = 'white';
-let bckColor = document.body.style.backgroundColor;
+var textElements = document.querySelectorAll("p, a");
+var textColor = 'white';
+var bckColor = document.body.style.backgroundColor;
 
 if (bckColor === 'white') {
     textColor = 'black';
@@ -17,6 +17,6 @@ if (bckColor === 'white') {
 }
 
 // Changes font color of each p and a tag
-for (let i = 0; i < textElements.length; i++) {
+for (var i = 0; i < textElements.length; i++) {
     textElements[i].style.color = textColor;
 }

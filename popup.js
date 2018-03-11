@@ -1,15 +1,14 @@
 // Adapted from: https://developer.chrome.com/extensions/getstarted
 
-
 function getCurrentTabUrl(callback) {
-  let queryInfo = {
+  var queryInfo = {
     active: true,
     currentWindow: true
   };
 
   chrome.tabs.query(queryInfo, (tabs) => {
-    let tab = tabs[0];
-    let url = tab.url;
+    var tab = tabs[0];
+    var url = tab.url;
     console.assert(typeof url == 'string', 'tab.url should be a string');
 
     callback(url);
@@ -17,7 +16,7 @@ function getCurrentTabUrl(callback) {
 }
 
 function changeBackgroundColor(color) {
-  let bkgColor = 'document.body.style.backgroundColor="' + color + '";';
+  var bkgColor = 'document.body.style.backgroundColor="' + color + '";';
 
   chrome.tabs.executeScript({
     code: bkgColor
@@ -35,15 +34,15 @@ function getSavedBackgroundColor(url, callback) {
 }
 
 function saveBackgroundColor(url, color) {
-  let items = {};
+  var items = {};
   items[url] = color;
   chrome.storage.sync.set(items);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  let colorblindDropdown = document.getElementById('colorblind-dropdown');
-  let colorDropdown = document.getElementById('color-dropdown');
-  let colorPrompt = document.getElementById('color-prompt');
+  var colorblindDropdown = document.getElementById('colorblind-dropdown');
+  var colorDropdown = document.getElementById('color-dropdown');
+  var colorPrompt = document.getElementById('color-prompt');
 
   // Prevents colorblind dropdown from showing first option as if it's selected
   colorblindDropdown.value = '';
@@ -69,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // Prevents background color dropdown from showing first option as if it's selected
       colorDropdown.value = '';
 
-      let allBackgroundColors = colorDropdown.children;
-      for (let i = 0; i < allBackgroundColors.length; i++) {
+      var allBackgroundColors = colorDropdown.children;
+      for (var i = 0; i < allBackgroundColors.length; i++) {
         allBackgroundColors[i].style.display = 'none';
       }
 
@@ -78,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
       colorDropdown.style.display = 'block';
 
       // Show each background color for selected colorblindness
-      let colorOptions = document.querySelectorAll("#color-dropdown #" + colorblindDropdown.value);
-      for (let i = 0; i < colorOptions.length; i++) {
+      var colorOptions = document.querySelectorAll("#color-dropdown #" + colorblindDropdown.value);
+      for (var i = 0; i < colorOptions.length; i++) {
         colorOptions[i].style.display = 'block';
       }
     });
