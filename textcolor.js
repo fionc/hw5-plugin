@@ -1,6 +1,6 @@
-var textElements = document.querySelectorAll("p, a");
-var textColor = 'white';
-var bckColor = document.body.style.backgroundColor;
+let textElements = document.querySelectorAll("p, a");
+let textColor = 'white';
+let bckColor = document.body.style.backgroundColor;
 
 if (bckColor === 'white') {
     textColor = 'black';

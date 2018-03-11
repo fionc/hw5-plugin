@@ -1,24 +1,23 @@
 // Adapted from: https://developer.chrome.com/extensions/getstarted
 
-// Gets current url with given callback
+
 function getCurrentTabUrl(callback) {
-  var queryInfo = {
+  let queryInfo = {
     active: true,
     currentWindow: true
   };
 
   chrome.tabs.query(queryInfo, (tabs) => {
-    var tab = tabs[0];
-    var url = tab.url;
+    let tab = tabs[0];
+    let url = tab.url;
     console.assert(typeof url == 'string', 'tab.url should be a string');
 
     callback(url);
   });
 }
 
-// Changes background page color given the background color
 function changeBackgroundColor(color) {
-  var bkgColor = 'document.body.style.backgroundColor="' + color + '";';
+  let bkgColor = 'document.body.style.backgroundColor="' + color + '";';
 
   chrome.tabs.executeScript({
     code: bkgColor
@@ -29,24 +28,22 @@ function changeBackgroundColor(color) {
   });
 }
 
-// Gets saved backgound color from given url and callback
 function getSavedBackgroundColor(url, callback) {
   chrome.storage.sync.get(url, (items) => {
     callback(chrome.runtime.lastError ? null : items[url]);
   });
 }
 
-// Saves to the given url and sets the given background color
 function saveBackgroundColor(url, color) {
-  var items = {};
+  let items = {};
   items[url] = color;
   chrome.storage.sync.set(items);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  var colorblindDropdown = document.getElementById('colorblind-dropdown');
-  var colorDropdown = document.getElementById('color-dropdown');
-  var colorPrompt = document.getElementById('color-prompt');
+  let colorblindDropdown = document.getElementById('colorblind-dropdown');
+  let colorDropdown = document.getElementById('color-dropdown');
+  let colorPrompt = document.getElementById('color-prompt');
 
   // Prevents colorblind dropdown from showing first option as if it's selected
   colorblindDropdown.value = '';
